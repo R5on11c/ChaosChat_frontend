@@ -14,9 +14,16 @@ export class AppComponent {
     setInterval(()=>{
       this.appRepo.getMessages().subscribe((response)=>{
         this.messages = response;
-      })
+        setTimeout(()=>{
+          document.getElementById('scrollcontainer').scrollTop += document.getElementById('scrollcontainer').scrollHeight;
+        }, 0);
+      });
     }, 500);
 
+  }
+  clearChat() {
+    this.appRepo.clearChat().subscribe();
+    document.getElementById('chatinput').focus();
   }
   sendText() {
     this.appRepo.sendMessage(this.message).subscribe();

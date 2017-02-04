@@ -8,6 +8,11 @@ export class AppRepository {
 
  constructor(private http: Http) { }
 
+ public clearChat(): Observable<any> {
+   return this.http.post('http://localhost:5880/clearchat', '')
+           .map((response) => response);
+ }
+
  public getMessages(): Observable<any> {
    return this.http.get('http://localhost:5880/messages')
            .map((response) => response.json());

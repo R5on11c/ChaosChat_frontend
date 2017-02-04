@@ -1,4 +1,20 @@
 .message{
   padding: 3px;
-  color: blue;
+  color: black;
+  word-wrap: break-word;
+}
+.ultracontainer{
+  height: calc(100% - 75px);
+  width: 100%;
+  position: absolute;
+  overflow-y: scroll;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0px;
+}
+.titletext{
+  font-weight: bold;
+  font-size: 20px;
 }
